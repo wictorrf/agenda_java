@@ -49,8 +49,7 @@ public class ContatoController {
     @GetMapping
     @Operation(summary = "Busca todos os contatos salvos no db!", method = "GET")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Cadastro do contato realizado com sucesso"),
-            @ApiResponse(responseCode = "400", description = "Algum erro nas validacoes foi detectado")
+            @ApiResponse(responseCode = "200", description = "Lista carregada com sucesso!"),
     })
     public ResponseEntity<List<Contato>> getAllContacts() {
         List<Contato> result = this.contatoService.getAllContacts();
