@@ -10,4 +10,4 @@ Como o junit e Mockito ja vem na dependencia test do springboot, criei testes un
 ## OBS:
 
 Eu criei o Dockerfile na minha api, mas eu não pude gerar a imagem e rodar por que minha máquina só tem 4 gb ram apenas, e com os programas abertos não foi capaz de gerar as imagens.
-Mas eu criei a configuração no arquivo e dps de fazer a build da image, eu iria rodar docker run -d -p 72:90 my-sring-api:1.0 para inicial a imagem na porta determinada.
+Mas eu criei a configuração no arquivo e dps de fazer a build da image, eu iria rodar docker run -d -p 72:90 my-sring-api:1.0 para iniciar a imagem na porta determinada.
