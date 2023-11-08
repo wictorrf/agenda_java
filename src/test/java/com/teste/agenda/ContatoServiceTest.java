@@ -6,6 +6,7 @@ import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -44,6 +45,17 @@ public class ContatoServiceTest {
         when(this.contatoRepository.findAll()).thenReturn(List.of(request));
         assertEquals(List.of(request), contatoService.getAllContacts());
         verify(contatoRepository).findAll();
+        verifyNoMoreInteractions(contatoRepository);
+    }
+
+    @Test
+    @DisplayName("Should verify if return contact with a id")
+    void getContactByIdTest() {
+        Contato request = new Contato(1L, "wictor", "wictor@email.com", "11234567890");
+        Optional<Contato> contact = Optional.of(request);
+        when(contatoService.getById(1L)).thenReturn(contact);
+        assertEquals(contatoRepository.findById(1L), contact);
+        verify(contatoRepository).findById(1L);
         verifyNoMoreInteractions(contatoRepository);
     }
 }
